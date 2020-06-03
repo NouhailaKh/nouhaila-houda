@@ -1,0 +1,42 @@
+<div class="card">
+    <div class="card-header"></div>
+
+    <div class="card-body">
+
+        <div class="form-group">
+            <h2 class="text-muted">Add New Product</h2>
+            <label>Id</label>
+            <input type="number" class="form-control" [(ngModel)]="products.Id">
+        </div>
+
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" [(ngModel)]="products.Name">
+        </div>
+
+        <div class="form-group">
+            <label>Date of production</label>
+            <input type="date" class="form-control" [(ngModel)]="products.Date_of_production">
+        </div>
+
+        <div class="form-group">
+            <label>Quantity of stock</label>
+            <input type="number" class="form-control" [(ngModel)]="products.Quantity_of_stock">
+        </div>
+
+        <div class="form-group">
+            <label>Quantity produced</label>
+            <input type="number" class="form-control" [(ngModel)]="products.Quantity_produced">
+        </div>
+
+        <div class="form-group">
+            <label>Reviews</label>
+            <input type="text" class="form-control" [(ngModel)]="products.Reviews">
+        </div>
+
+
+        <div class="card-footer">
+            <button class="btn  btn-block btn-success" (click)="save()">Save</button>
+        </div>
+
+    </div>

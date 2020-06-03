@@ -1,0 +1,32 @@
+<div class="card">
+    <div class="card-footer"></div>
+    <div class="card-body">
+        <h2 class="text-muted">List of Providers</h2>
+        <table class="table table-hover table-striped">
+            <thead>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Phone</th>
+                <th>Actions</th>
+
+            </thead>
+            <tbody>
+                <tr *ngFor="let p of providers">
+                    <td>{{p.Id}}</td>
+                    <td>{{p.Name}}</td>
+                    <td>{{p.Email}}</td>
+                    <td>{{p.Address}}</td>
+                    <td>{{p.Phone}}</td>
+                    <td>{{p.Actions}}</td>
+                    <td><button class="btn btn-outline-danger" (click)="destroyproviders(p)"><i class="fa fa-trash"></i></button></td>
+                    <td><button class="btn btn-outline-warning"><i class="fa fa-pen"></i></button></td>
+                    <td>
+                        <a href="https://accounts.google.com/signin/v2/identifier?service=mail&passive=true&rm=false&continue=https%3A%2F%2Fmail.google.com%2Fmail" target="_blank"> <button class="btn btn-success"><i class="fa fa-envelope"></i></button> </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

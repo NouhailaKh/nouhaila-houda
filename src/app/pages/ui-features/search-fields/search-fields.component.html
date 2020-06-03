@@ -1,0 +1,26 @@
+<div class="card">
+    <div class="card-footer"></div>
+    <div class="card-body">
+        <h2 class="text-muted">List of Material Raw</h2>
+        <table class="table table-hover table-striped">
+            <thead>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Provider</th>
+                <th>Quantity of stock</th>
+                <th>Reviews</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let m of materialraws">
+                    <td>{{m.Id}}</td>
+                    <td>{{m.Name}}</td>
+                    <td>{{m.Provider}}</td>
+                    <td>{{m.Quantity_of_stock}}</td>
+                    <td>{{m.Reviews}}</td>
+                    <td><button class="btn btn-outline-danger" (click)="destroymaterialraws(m)"><i class="fa fa-trash"></i></button></td>
+                    <td><button class="btn btn-outline-warning"><i class="fa fa-pen"></i></button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
