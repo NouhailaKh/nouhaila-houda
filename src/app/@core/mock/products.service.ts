@@ -10,10 +10,19 @@ export class ProductsService {
   private _products: Product ;
   private _product: Array<Product> ;
   
-  constructor( private http: HttpClient) {}
+  constructor( private httpClient: HttpClient) {}
 public save() {
-  
-      this.product.push(this.clone(this.products)) ;
+  this.httpClient
+  .post('https://localhost:8080/products', this.products)
+  .subscribe(
+    () => {
+      console.log('Enregistrement terminé !');
+    },
+    (error) => {
+      console.log('Erreur ! : ' + error);
+    }
+  );
+     
       
     }
 
