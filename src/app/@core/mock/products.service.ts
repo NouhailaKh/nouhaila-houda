@@ -9,24 +9,23 @@ import {Product} from '../../pages/tables/product/product' ;
 export class ProductsService {
   private _products: Product ;
   private _product: Array<Product> ;
-  
-  constructor( private httpClient: HttpClient) {}
-public save() {
-  this.httpClient
-  .post('https://localhost:8080/products', this.products)
-  .subscribe(
-    () => {
-      console.log('Enregistrement terminé !');
-    },
-    (error) => {
-      console.log('Erreur ! : ' + error);
-    }
-  );
-     
-      
-    }
+  model:any={};  
 
-  get product(): Array<Product> {
+  constructor( private httpClient: HttpClient ) {
+  
+    this.product.push(
+      new Product
+    );    
+  }
+
+  get() {
+    return new Promise(resolve => resolve(Product));
+  }
+
+public save() {
+  this.product.push(this.products) ;
+}
+      get product(): Array<Product> {
     if (this._product == null) {
       this._product = new Array<Product>() ;
     }
@@ -51,6 +50,8 @@ public save() {
       resolve(true);
     });
   }
+
+  
   set products(value: Product) {
     this._products = value;
   }

@@ -8,16 +8,25 @@ import {Product} from './product';
   styleUrls: ['./product.component.scss'],
 })
 export class ProductComponent implements OnInit {
-
+  msg:any="";
+private activeTasks;
 constructor(private productsService: ProductsService) { }
 
+
+
   ngOnInit() {
+
   }
   public save() {
   this.productsService.save() ;
-  }
+  this.msg = "Record is successfully added..... "; 
+}
 
   get products(): Product {
-  return this.productsService.products ;
+return this.productsService.products ;
+  }
+
+  clickMe(){
+    this.msg = "";
   }
 }

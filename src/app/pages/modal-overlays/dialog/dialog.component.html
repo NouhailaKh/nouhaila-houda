@@ -2,6 +2,11 @@
     <div class="card-header"></div>
 
     <div class="card-body">
+        <div class="col-md-4">
+            <div class="alert alert-success alert-dismissable" *ngIf="msg">
+                <a href="#" class="close" (click)="clickMe()">&times;</a> {{msg}}
+            </div>
+        </div>
         <h2 class="text-muted">Add New Material Raw</h2>
 
         <div class="form-group">

@@ -1,20 +1,15 @@
-@import '../../../@theme/styles/themes';
+.btn {
+    width: 90px;
+    margin-left: 7px;
+}
 
-@include nb-install-component() {
-  .buttons-row {
-    margin: -0.5rem;
-  }
+.container {
+    border: 5px lightseagreen solid;
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
 
-  button[nbButton] {
-    margin: 0.5rem;
-  }
-
-  .action-icon {
-    @include nb-ltr(margin-right, 0.5rem);
-    @include nb-rtl(margin-left, 0.5rem);
-  }
-
-  .actions-card {
-    height: 8rem;
-  }
+.alert {
+    margin-top: 15px;
+    margin-bottom: 0px;
 }

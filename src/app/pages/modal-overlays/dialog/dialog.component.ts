@@ -8,16 +8,20 @@ import {MaterialRawService} from '../../../@core/mock/dialog.service';
   styleUrls: ['dialog.component.scss'],
 })
 export class DialogComponent implements  OnInit {
+  msg:any="";
   constructor(private materialrawService: MaterialRawService ) {
   }
   ngOnInit(): void {
   }
   public save() {
     this.materialrawService.save() ;
+    this.msg = "Record is successfully added..... "; 
   }
 
   get materialraw(): MaterialRaw {
     return this.materialrawService.materialraw ;
   }
-
+  clickMe(){
+    this.msg = "";
+  }
 }

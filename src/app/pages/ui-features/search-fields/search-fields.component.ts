@@ -7,6 +7,7 @@ import {MaterialRaw} from '../../modal-overlays/dialog/dialog';
     templateUrl: 'search-fields.component.html',
 })
 export class SearchComponent implements OnInit {
+  msg:any="";
   constructor(private materialrawService: MaterialRawService) {
   }
   ngOnInit(): void {
@@ -18,5 +19,13 @@ export class SearchComponent implements OnInit {
     this.materialrawService.delete(this.materialraws).then(() => {
       return this.materialraws;
     });
+  }
+  delete(i){
+    this.materialraws.splice(i,1);
+    this.msg = "Record is successfully deleted..... ";
+    
+  }
+  clickMe(){
+    this.msg = "";
   }
 }

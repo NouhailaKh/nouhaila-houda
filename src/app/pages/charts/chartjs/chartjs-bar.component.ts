@@ -1,6 +1,5 @@
 import { Component, OnDestroy } from '@angular/core';
 import { NbThemeService, NbColorHelper } from '@nebular/theme';
-import { Product } from '../../tables/product/product';
 
 @Component({
   selector: 'ngx-chartjs-bar',
@@ -18,6 +17,20 @@ export class ChartjsBarComponent implements OnDestroy {
 
       const colors: any = config.variables;
       const chartjs: any = config.variables.chartjs;
+
+      this.data = {
+        labels: ['product1', 'product2', 'product3', 'product4'],
+        datasets: [{
+          data: [65, 59, 80, 81, 56, 55, 40],
+          label: 'Qunatity of stock',
+          backgroundColor: NbColorHelper.hexToRgbA(colors.primaryLight, 0.8),
+        }, {
+          data: [28, 48, 40, 19, 86, 27, 90],
+          label: 'Quantity produced',
+          backgroundColor: NbColorHelper.hexToRgbA(colors.successLight, 0.8),
+        }],
+      };
+
       this.options = {
         maintainAspectRatio: false,
         responsive: true,
@@ -52,19 +65,7 @@ export class ChartjsBarComponent implements OnDestroy {
         },
       };
     });
-   
-    this.data = {
-      labels: Product["Date_of_production"] ,
-      datasets: [{
-        data: {get product(): Array<Product> {
-          return this.productsService.product ;
-        },
-    },
-    label: Product["Id"],
-      }]
-    }
-  };
-  
+  }
 
   ngOnDestroy(): void {
     this.themeSubscription.unsubscribe();

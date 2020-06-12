@@ -1,11 +1,13 @@
 <div class="card">
     <div class="card-footer"></div>
+    <div class="col-md-4">
+        <div class="alert alert-danger alert-dismissable" *ngIf="msg">
+            <a href="#" class="close" (click)="clickMe()">&times;</a> {{msg}}
+        </div>
+    </div>
     <div class="card-body">
-        <h2 class="text-muted">List of Product</h2>
         <table class="table table-hover table-striped">
-
             <thead>
-
                 <th>Id</th>
                 <th>Name</th>
                 <th>Date of production</th>
@@ -13,7 +15,6 @@
                 <th>Quantity produced</th>
                 <th>Reviews</th>
             </thead>
-
             <tbody>
                 <tr *ngFor="let p of product">
                     <td>{{p.Id}}</td>
@@ -22,7 +23,7 @@
                     <td>{{p.Quantity_of_stock}}</td>
                     <td>{{p.Quantity_produced}}</td>
                     <td>{{p.Reviews}}</td>
-                    <td><button class="btn btn-outline-danger" (click)="destroyproduct(p)"><i class="fa fa-trash"></i></button></td>
+                    <td><button class="btn btn-outline-danger" (click)="delete(i)"><i class="fa fa-trash"></i></button></td>
                     <td><button class="btn btn-outline-warning"><i class="fa fa-pen"></i></button></td>
                 </tr>
             </tbody>

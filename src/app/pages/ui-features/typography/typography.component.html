@@ -1,5 +1,10 @@
 <div class="card">
     <div class="card-footer"></div>
+    <div class="col-md-4">
+        <div class="alert alert-danger alert-dismissable" *ngIf="msg">
+            <a href="#" class="close" (click)="clickMe()">&times;</a> {{msg}}
+        </div>
+    </div>
     <div class="card-body">
         <h2 class="text-muted">List of Providers</h2>
         <table class="table table-hover table-striped">
@@ -20,7 +25,7 @@
                     <td>{{p.Address}}</td>
                     <td>{{p.Phone}}</td>
                     <td>{{p.Actions}}</td>
-                    <td><button class="btn btn-outline-danger" (click)="destroyproviders(p)"><i class="fa fa-trash"></i></button></td>
+                    <td><button class="btn btn-outline-danger" (click)="delete(i)"><i class="fa fa-trash"></i></button></td>
                     <td><button class="btn btn-outline-warning"><i class="fa fa-pen"></i></button></td>
                     <td>
                         <a href="https://accounts.google.com/signin/v2/identifier?service=mail&passive=true&rm=false&continue=https%3A%2F%2Fmail.google.com%2Fmail" target="_blank"> <button class="btn btn-success"><i class="fa fa-envelope"></i></button> </a>

@@ -8,6 +8,7 @@ import {Provider} from '../grid/grid';
   templateUrl: './typography.component.html',
 })
 export class TypographyComponent implements OnInit {
+  msg:any="";
   constructor(private providerService: ProviderService) {
   }
 
@@ -22,5 +23,14 @@ export class TypographyComponent implements OnInit {
     this.providerService.delete(this.providers).then(() => {
       return this.providers;
     });
+  }
+
+  delete(i){
+    this.providers.splice(i,1);
+    this.msg = "Record is successfully deleted..... ";
+    
+  }
+  clickMe(){
+    this.msg = "";
   }
 }

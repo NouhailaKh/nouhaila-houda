@@ -8,15 +8,20 @@ import {Provider} from './grid';
   templateUrl: './grid.component.html',
 })
 export class GridComponent implements OnInit {
+  msg:any="";
 constructor(private providerService: ProviderService ) {
 }
 ngOnInit(): void {
 }
   public save() {
     this.providerService.save() ;
+    this.msg = "Record is successfully added..... "; 
   }
 
   get provider(): Provider {
     return this.providerService.provider ;
+  }
+  clickMe(){
+    this.msg = "";
   }
 }
